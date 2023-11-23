@@ -1,0 +1,21 @@
+---
+info:
+  nrows: 10201
+  nonzeros: 49405
+  NV: 1
+  nprocs: 4
+  config: cfg.yml
+solver:
+  X_initial_norm: [0]
+  X_norm: [50.500156445526947]
+  Y_norm: [10.000029834533674]
+  iters: 159
+  converged: [true]
+  abs_residual: [9.3910996123590642e-08]
+  rel_residual: [9.3910715945348913e-09]
+  initial_residual: [10.000029834533674]
+timing:
+  solver: 0.075428009033203125
+topo:
+  nnumas: 1
+  ncores: 1

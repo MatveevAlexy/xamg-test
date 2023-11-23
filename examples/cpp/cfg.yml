@@ -1,0 +1,7 @@
+---
+matrix: mtx_Paus.bin
+solver_params:
+  method: BiCGStab
+  max_iters: 100
+preconditioner_params:
+  method: Jacobi

@@ -1,0 +1,47 @@
+---
+version: 1
+matrix: generate
+generator_params:
+  case: channel_with_cube
+  scale: 1
+  const_rhs: 0
+mode: solver
+meta_solver_params:
+  method: IterativeRefinement
+  max_iters: 20
+  subsolver_reduced_precision: 1
+  convergence_details: check-L2,print
+  abs_tolerance: 5.e-6
+  rel_tolerance: 0.0
+solver_params:
+  method: PBiCGStab
+  max_iters: 20
+  convergence_details: check-L2,RR,print
+  abs_tolerance: 5.e-6
+  rel_tolerance: 0.0
+residual_control_params:
+  method: ResidualReplacement
+  RR_stepping: 0.1
+  RR_deviation: 2
+preconditioner_params:
+  method: MultiGrid
+  max_iters: 1
+  hypre_log: 0
+  mg_agg_num_levels: 10
+  mg_coarse_matrix_size: 500
+  mg_num_paths: 2
+  mg_trunc_factor: 0.3
+  mg_agg_trunc_factor: 0.3
+  mg_strength_threshold: 0.25
+  mg_reduced_precision: 0
+pre_smoother_params:
+  method: HSGS
+  relax_factor: 0.95
+  max_iters: 1
+post_smoother_params:
+  method: HSGS
+  relax_factor: 0.95
+  max_iters: 1
+coarse_grid_solver_params:
+  method: Direct
+graph_reordering: true
